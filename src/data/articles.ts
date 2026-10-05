@@ -9,7 +9,9 @@ export interface Article {
   content: string[]
 }
 
-const img = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1200&q=80`
+const _imgPool = ['1490806843957-31f4c9a91c65', '1497366216548-37526070297c', '1568605114967-8130f3a36994', '1502005229762-cf1b2da7c5d6']
+let _imgIdx = 0
+const img = (_id: string) => `https://images.unsplash.com/photo-${_imgPool[_imgIdx++ % _imgPool.length]}?auto=format&fit=crop&w=1200&q=80`
 
 export const articles: Article[] = [
   {

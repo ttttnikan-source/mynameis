@@ -10,7 +10,9 @@ export interface Agent {
   propertiesSold: number
 }
 
-const avatar = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=400&q=80`
+const _avatarPool = ['1500648767791-00dcc994a43e', '1463453091185-61582044d556', '1544005313-94ddf0286df2']
+let _avatarIdx = 0
+const avatar = (_id: string) => `https://images.unsplash.com/photo-${_avatarPool[_avatarIdx++ % _avatarPool.length]}?auto=format&fit=crop&w=400&q=80`
 
 export const agents: Agent[] = [
   {
