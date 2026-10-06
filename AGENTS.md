@@ -24,6 +24,7 @@ The app runs on port 3000 via Vite dev server with live reload. Dependencies ins
 - Favorites are stored in-memory (React context) — not persisted
 - Property search filters pass via URL query params from hero → properties page
 - The floating search bar on the hero uses `translate-y-1/2` to overlap sections — a spacer div follows the hero
+- Home hero is a scroll-scrubbed video (`public/videos/hero.mp4`, 4.1s): a 320vh section pins a sticky 100vh viewport; scroll progress drives `video.currentTime` via rAF + smoothing in `src/components/Hero.tsx` (never `video.play()`). `prefers-reduced-motion` users get the static image hero. Fallback: Unsplash image layer under the video
 
 ## Color System
 - Navy: `#082B4C` (primary), `#051A2E` (deep/footer)
